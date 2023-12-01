@@ -14,6 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+      <News key="general" headline="" pageSize={6} category=""/>
       <BrowserRouter>
       <NavBar toggleRegionIn={this.toggleRegionIn} toggleRegionUS={this.toggleRegionUS} />
       <Routes>

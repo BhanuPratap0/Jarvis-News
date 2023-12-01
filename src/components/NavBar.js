@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import News from './News'
 import { Link } from 'react-router-dom'
 
 export class NavBar extends Component {

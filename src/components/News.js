@@ -23,18 +23,13 @@ export class News extends Component {
   let data=await fetch(url);
   let parsedData= await data.json();
   console.log(parsedData);
-  this.setState({articles: parsedData.articles,loading:false})
+  this.setState({articles: parsedData.articles,
+    totalResults: parsedData.totalResults,
+    loading:false})
  }
 
  async  componentDidMount(){
-    console.log("cdm");
-    let url=`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=d7df0030db71449c82a9bdbbed51539a&pageSize=${this.props.pageSize}`
-    this.setState({loading:true})
-    let data=await fetch(url);
-    let parsedData= await data.json();
-    this.setState({loading:false})
-    console.log(parsedData);
-    this.setState({articles: parsedData.articles,totalResults: parsedData.totalResults})
+    this.updateNews();
     
   }
   handleNext= async ()=>{
